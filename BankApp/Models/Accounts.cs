@@ -1,4 +1,4 @@
-namespace TodoApi.Models 
+namespace BankApp.Models 
 {
 
     public class Accounts
@@ -8,5 +8,4 @@ namespace TodoApi.Models
         public bool IsComplete { get; set; }
         public string? Secret { get; set; }
     }
-
 }

@@ -1,7 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using System.Diagnostics.CodeAnalysis;
 
-namespace TodoApi.Models
+namespace BankApp.Models
 {
     public class AccountsContext : DbContext
     {
@@ -10,6 +10,6 @@ namespace TodoApi.Models
         {
         }
 
-        public DbSet<Accounts> TodoItems { get; set; } = null!;
+        public DbSet<Accounts> Accounts { get; set; } = null!;
     }
 }

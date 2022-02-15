@@ -1,5 +1,5 @@
 using Microsoft.EntityFrameworkCore;
-using TodoApi.Models;
+using BankApp.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -10,7 +10,7 @@ builder.Services.AddDbContext<TodoContext>(opt =>
     opt.UseInMemoryDatabase("TodoList")); 
 //builder.Services.AddSwaggerGen(c =>
 //{
-//    c.SwaggerDoc("v1", new() { Title = "TodoApi", Version = "v1" });
+//    c.SwaggerDoc("v1", new() { Title = "BankApp", Version = "v1" });
 //});
 
 var app = builder.Build();
@@ -20,7 +20,7 @@ if (app.Environment.IsDevelopment())
 {
     app.UseDeveloperExceptionPage();
     //app.UseSwagger();
-    //app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "TodoApi v1"));
+    //app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "BankApp v1"));
 }
 
 app.UseDefaultFiles();
