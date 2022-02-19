@@ -6,7 +6,7 @@ using BankApp.Models;
 namespace BankApp.Controllers
 {
     [Route("api/Accounts")]  
-    [apiController] 
+    [ApiController] 
     public class AccountsController : ControllerBase
     {
         private readonly AccountsContext _context;
@@ -21,7 +21,7 @@ namespace BankApp.Controllers
         public async Task<ActionResult<IEnumerable<AccountsDTO>>> GetAccounts()
         {
             return await _context.Accounts
-                .Select(x => ItemToDTO(x))
+                .Select(x => AccountsDTO(x))
                 .ToListAsync(); 
         }
 
@@ -110,7 +110,7 @@ namespace BankApp.Controllers
         {
             return _context.Accounts.Any(e => e.Id == id);
         }
-        private static AccountsDTO ItemToDTO(Accounts accounts) =>
+        private static AccountsDTO AccountsDTO(Accounts accounts) =>
             new AccountsDTO
             {
                 Id = accounts.Id,
