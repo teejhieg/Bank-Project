@@ -1,7 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using System.Diagnostics.CodeAnalysis;
 
-namespace TodoApi.Models
+namespace BankApp.Models
 {
     public class TodoContext : DbContext
     {

@@ -1,4 +1,4 @@
-namespace TodoApi.Models
+namespace BankApp.Models
 {
     public class TodoItemDTO
     {

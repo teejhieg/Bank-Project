@@ -1,7 +1,7 @@
 #nullable disable
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using TodoApi.Models;
+using BankApp.Models;
 
 namespace BankApp.Controllers
 {
