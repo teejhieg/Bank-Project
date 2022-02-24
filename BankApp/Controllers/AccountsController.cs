@@ -75,10 +75,17 @@ namespace BankApp.Controllers
         [HttpPost]
         public async Task<ActionResult<AccountsDTO>> CreateAccounts(AccountsDTO accountsDTO)
         {
+            if (string.IsNullOrWhiteSpace(accountsDTO.FirstName) || string.IsNullOrWhiteSpace(accountsDTO.LastName))
+            {
+                return new BadRequestObjectResult("First name AND last name are required.");
+            }
+
             var accounts = new Accounts
             {
-                IsComplete = accountsDTO.IsComplete,
-                Name = accountsDTO.Name
+                FirstName = accountsDTO.FirstName,
+                LastName = accountsDTO.LastName,
+                PhoneNumber = accountsDTO.PhoneNumber,
+                DateOfBirth = accountsDTO.DateOfBirth
             };
 
             _context.Accounts.Add(accounts);
@@ -114,8 +121,10 @@ namespace BankApp.Controllers
             new AccountsDTO
             {
                 Id = accounts.Id,
-                Name = accounts.Name,
-                IsComplete = accounts.IsComplete
+                FirstName = accounts.FirstName,
+                LastName = accounts.LastName,
+                PhoneNumber = accounts.PhoneNumber,
+                DateOfBirth = accounts.DateOfBirth    
             };
     }
 }
