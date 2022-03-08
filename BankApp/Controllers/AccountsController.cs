@@ -21,7 +21,7 @@ namespace BankApp.Controllers
         public async Task<ActionResult<IEnumerable<AccountsDTO>>> GetAccounts()
         {
             return await _context.Accounts
-                .Select(x => AccountsDTO(x))
+                .Select(x => CreateAccountsDTO(x))
                 .ToListAsync(); 
         }
 
@@ -92,7 +92,7 @@ namespace BankApp.Controllers
             await _context.SaveChangesAsync();
 
             //return CreatedAtAction("GetAccounts", new { id = accounts.Id }, accounts);
-            return CreatedAtAction(nameof(GetAccounts), new { id = accounts.Id }, accounts);
+            return CreatedAtAction(nameof(GetAccounts), new { id = accounts.Id }, CreateAccountsDTO(accounts) );
         }
 
         // DELETE: api/Accounts/5
@@ -117,7 +117,7 @@ namespace BankApp.Controllers
         {
             return _context.Accounts.Any(e => e.Id == id);
         }
-        private static AccountsDTO AccountsDTO(Accounts accounts) =>
+        private static AccountsDTO CreateAccountsDTO(Accounts accounts) =>
             new AccountsDTO
             {
                 Id = accounts.Id,
