@@ -1,4 +1,4 @@
-namespace BankApp.Models 
+namespace BankApp.Models
 {
 
     public class Accounts
@@ -8,5 +8,6 @@ namespace BankApp.Models
         public string? LastName { get; set; }
         public string? PhoneNumber { get; set; }
         public DateTime DateOfBirth { get; set; }
+
     }
 }
